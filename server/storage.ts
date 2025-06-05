@@ -16,13 +16,11 @@ export interface IStorage {
   // Game methods
   getGame(id: number): Promise<Game | undefined>;
   getGames(): Promise<Game[]>;
-  getGamesBySport(sport: string): Promise<Game[]>;
   createGame(game: InsertGame): Promise<Game>;
   
   // Player methods
   getPlayer(id: number): Promise<Player | undefined>;
   getPlayers(): Promise<Player[]>;
-  getPlayersBySport(sport: string): Promise<Player[]>;
   createPlayer(player: InsertPlayer): Promise<Player>;
 }
 
@@ -62,12 +60,6 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(games);
   }
   
-  async getGamesBySport(sport: string): Promise<Game[]> {
-    return db
-      .select()
-      .from(games)
-      .where(eq(games.sport, sport));
-  }
   
   async createGame(game: InsertGame): Promise<Game> {
     const [newGame] = await db
@@ -90,12 +82,6 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(players);
   }
   
-  async getPlayersBySport(sport: string): Promise<Player[]> {
-    return db
-      .select()
-      .from(players)
-      .where(eq(players.sport, sport));
-  }
   
   async createPlayer(player: InsertPlayer): Promise<Player> {
     const [newPlayer] = await db
