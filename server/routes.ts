@@ -14,10 +14,7 @@ const setupRoutes = (app: Express, server: Server) => {
   // Game routes
   app.get('/api/games', async (req, res) => {
     try {
-      const sport = req.query.sport as string | undefined;
-      const games = sport 
-        ? await storage.getGamesBySport(sport)
-        : await storage.getGames();
+      const games = await storage.getGames();
       res.json(games);
     } catch (error) {
       console.error('Error fetching games:', error);
@@ -58,10 +55,7 @@ const setupRoutes = (app: Express, server: Server) => {
   // Player routes
   app.get('/api/players', async (req, res) => {
     try {
-      const sport = req.query.sport as string | undefined;
-      const players = sport
-        ? await storage.getPlayersBySport(sport)
-        : await storage.getPlayers();
+      const players = await storage.getPlayers();
       res.json(players);
     } catch (error) {
       console.error('Error fetching players:', error);
