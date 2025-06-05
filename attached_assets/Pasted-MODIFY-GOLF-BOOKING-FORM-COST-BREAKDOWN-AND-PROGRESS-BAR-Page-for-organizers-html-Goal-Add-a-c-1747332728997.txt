@@ -1,0 +1,84 @@
+MODIFY GOLF BOOKING FORM – COST BREAKDOWN AND PROGRESS BAR
+Page: for-organizers.html
+Goal: Add a cost summary and progress bar below the "Number of Players" field to reflect green fee, booking fee, optional add-ons, and a split total per player.
+ 
+1.	Add a new section under the "Number of Players" field to display the following values:
+•	Green Fee (based on location and game type)
+•	Booking Fee (always $3.00)
+•	Total cost of add-ons (based on what is selected and which course is chosen)
+•	Grand Total
+•	Per Player Cost (Grand Total divided by number of players)
+•	Progress bar showing what percent of the group is committed, based on the number of players
+Always assume the person posting the ad is interested, so progress bar should start at 1 divided by the total number of players (e.g., 25% for 4 players, 33% for 3, etc).
+ 
+2.	Logic for pricing:
+Green Fee should be pulled from this list, depending on course and game type selected:
+Pine View Golf Course
+•	18-hole: $45
+•	Executive: $36
+•	Add-ons: Power Cart 18 Holes $22, Power Cart 9 Holes $15, Push Cart $7
+The Marshes Golf Club
+•	18-hole: $125
+•	9-hole short course: $15
+•	Add-ons: Cart included in green fee
+White Sands Golf
+•	9 Holes: $25.50 weekday, $27.50 weekend
+•	18 Holes: $37.50 weekday, $41.50 weekend
+•	Add-ons: Practice & Play $28.75, Practice + Chipping Area $30.00
+Metcalfe Golf Club
+•	18-hole: $61
+•	9-hole: use $30.50
+•	Add-ons: Optional Replay $31
+Thunderbird Golf Course
+•	9-hole: $23
+•	18-hole: $30.80
+•	No add-ons listed
+Emerald Links
+•	18-hole: $47
+•	9-hole: $37
+•	Add-ons: Power Cart 18 $30, Power Cart 9 $25, Push Cart $9.95
+Anderson Links
+•	18-hole: $44 weekday, $50 weekend
+•	Add-ons: Power Cart 18 $30, Power Cart 9 $25
+Cedarhill
+•	18-hole: $73
+•	9-hole: $50
+•	Add-ons: Power Cart 18 $22 per seat, Power Cart 9 $15 per seat, Push Cart $7
+Stittsville
+•	Weekday: $36
+•	Weekend: $40
+•	No add-ons listed
+Falcon Ridge
+•	AM Weekday: $43.35
+•	PM: $35.40
+•	Twilight: $26.55
+•	No add-on prices listed
+ 
+3.	Booking Fee
+•	Always add $3.00 to the total booking
+ 
+4.	Add-Ons
+•	Should be shown as checkboxes or toggle switches based on selected location
+•	Pull prices from the list above
+•	Sum add-ons to show as a separate line in the price breakdown
+ 
+5.	Progress Bar
+•	Fill percentage = 1 divided by number of players selected
+•	Always assume the ad poster is one of the players
+•	Bar should update as the number of players field is changed
+Example:
+If Number of Players = 4 → Progress = 25%
+If Number of Players = 3 → Progress = 33%
+If Number of Players = 2 → Progress = 50%
+If Number of Players = 1 → Progress = 100%
+ 
+6.	Final Display Section
+Display the following lines:
+Total Cost: [Grand Total]
+Green Fee: [Course-specific amount]
+Booking Fee: $3.00
+Add-ons: [Add-on total]
+[Progress Bar showing percent filled]
+[Number of players] – [Per Player Cost]
+ 
+Update this section dynamically as the user selects location, game type, add-ons, and number of players. This progress bar and it’s data will also be show in the thumbnails of adds in the “join a game” page. 

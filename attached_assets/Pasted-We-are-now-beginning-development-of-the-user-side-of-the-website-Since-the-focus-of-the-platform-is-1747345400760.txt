@@ -1,0 +1,33 @@
+We are now beginning development of the user side of the website. Since the focus of the platform is golf, we will be making modifications to the navigation bar and associated pages.
+
+Step 1: Convert the "For Organizers" page into the "My Profile" page
+
+In the top navigation bar, change the link labeled “For Organizers” to say: My Profile
+This link should now lead to a new page titled my-profile.html
+The content of this page will be completely replaced.
+New Page: my-profile.html
+
+The My Profile page will serve as a user’s golf profile. For now, this page will be static or hardcoded. Eventually, profiles will be tied to user accounts.
+
+Begin with a heading that says: My Profile
+Below that, create cleanly labeled sections for the following profile fields:
+
+Display Name (text field or static placeholder)
+Age or Age Range
+Location (City or Neighborhood)
+Skill Level (dropdown – same values as used in the booking form)
+Personal Best Score (text field)
+Home Course (dropdown – use predefined course list)
+Favorite Courses (multi-select from same course list)
+Short Bio or Experience (text area)
+Layout should be clean, mobile-friendly, and stacked vertically. Fields can be either editable or displayed as text placeholders for now.
+
+Profiles Will Be Used Site-Wide
+
+These profiles will be required in order to post an ad. This is intended to function as a golf-focused social platform.
+
+On the Join a Game page, the poster’s profile will be displayed alongside their ad. It will include a clickable link to view their full profile.
+The top navigation link labeled “For Players” will eventually be renamed to Find Players.
+That page will list all user profiles in a sortable, searchable table. Fields shown will include: Display Name, Skill Level, Home Course, and Profile Link.
+Note:
+In a future phase, profiles will be tied to user accounts. Right now, this is a placeholder layout. Profile creation logic, form submission, saving, and account-based access will be added in a later step. Do not implement that functionality yet.

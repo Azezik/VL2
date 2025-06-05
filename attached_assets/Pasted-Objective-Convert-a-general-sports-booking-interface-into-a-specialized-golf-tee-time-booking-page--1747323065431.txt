@@ -1,0 +1,76 @@
+Objective: Convert a general sports booking interface into a specialized golf tee time booking page using the structure below. Update field names, input types, options, and logic as described.
+
+🔁 FIELD MODIFICATIONS
+1. Ad Title
+
+Keep as-is. No changes.
+2. Sport → Skill Level
+
+Rename label: Skill Level
+Input type: <select>
+Options:
+<option>Never Played / First-Timer</option>
+<option>Beginner</option>
+<option>Casual / Recreational Golfer</option>
+<option>Intermediate</option>
+<option>Experienced</option>
+<option>Advanced / Competitive</option>
+<option>Scratch / Tournament-Level</option>
+Add title attribute or tooltip pop-up for each option with a short description and handicap info.
+Example:
+<option title="Never swung a club or only been to the driving range. No course experience. Handicap: N/A">
+  Never Played / First-Timer
+</option>
+3. Location
+
+Label: Location
+Input type: <select>
+Options:
+<option>Pine View Golf Course</option>
+<option>The Marshes Golf Club</option>
+<option>White Sands Golf Course</option>
+<option>Metcalfe Golf Club</option>
+<option>Thunderbird Golf Course</option>
+<option>Emerald Links Golf & Country Club</option>
+<option>Anderson Links Golf & Country Club</option>
+<option>Cedarhill Golf & Country Club</option>
+<option>Stittsville Golf Course</option>
+<option>Falcon Ridge Golf Club</option>
+4. Game Type (NEW FIELD)
+
+Label: Game Type
+Input type: <div> of multi-select toggle buttons OR checkboxes
+Options (selectable):
+<input type="checkbox" value="9-Hole"> 9-Hole  
+<input type="checkbox" value="18-Hole"> 18-Hole  
+<input type="checkbox" value="Executive Course"> Executive Course  
+<input type="checkbox" value="Par-3 Course"> Par-3 Course  
+<input type="checkbox" value="27-Hole"> 27-Hole
+Logic (optional): Filter available game type options based on selected location.
+Example:
+If user selects "White Sands", only show: 9-Hole, Par-3 Course
+5. Date
+
+Keep as-is. No changes needed.
+6. Time → Tee Time
+
+Rename label: Tee Time
+Input type: time selector or dropdown
+Restrict options to: 06:30 AM to 07:00 PM only (in 10–15 min increments)
+7. Max Players → Number of Players
+
+Rename label: Number of Players
+Input type: <select>
+Options:
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+8. Details
+
+Leave as-is. Large <textarea> input remains unchanged.
+🧠 Optional Enhancements
+Add JavaScript logic to:
+Filter Game Type options by selected Location.
+Restrict time selector dynamically based on daylight or date range.
+Add visual styling (checkboxes styled like toggle buttons).

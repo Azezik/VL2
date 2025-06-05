@@ -1,0 +1,88 @@
+Goal: Convert the existing sports booking interface into a golf-specific tee time booking system.
+
+1. Ad Title
+
+No changes needed. Leave as-is.
+2. Sport → Skill Level
+
+Rename label: Skill Level
+Input type: <select>
+Options:
+Each option must include the following descriptive content in either a tooltip (title attribute), small subtext, or expandable help icon:
+Never Played / First-Timer
+“Never swung a club or only been to the driving range. No course experience.”
+Handicap: N/A
+Beginner
+“Played a few rounds. Learning how to swing, chip, and putt. Not yet scoring consistently.”
+Handicap: N/A
+Casual / Recreational Golfer
+“Play a few times per season. Comfortable on a course but rarely keep score seriously.”
+Handicap: ~28–36+
+Intermediate
+“Play semi-regularly. Understand pace, etiquette, and keep score. Some consistency off the tee.”
+Handicap: ~18–28
+Experienced
+“Solid swing fundamentals. Manage most holes well, shoot under 100 consistently.”
+Handicap: ~10–18
+Advanced / Competitive
+“Play regularly, break 85 often, manage course strategy. Comfortable in amateur events.”
+Handicap: ~4–10
+Scratch / Tournament-Level
+“Consistently shoot par or better. May compete in high-level amateur or pro qualifiers.”
+Handicap: 0 or better (Scratch / + Index)
+3. Location
+
+Rename label: Location
+Input type: <select>
+Dropdown options (use this exact list):
+Pine View Golf Course
+The Marshes Golf Club
+White Sands Golf Course
+Metcalfe Golf Club
+Thunderbird Golf Course
+Emerald Links Golf & Country Club
+Anderson Links Golf & Country Club
+Cedarhill Golf & Country Club
+Stittsville Golf Course
+Falcon Ridge Golf Club
+4. Game Type (NEW FIELD)
+
+Label: Game Type
+Input type: multi-select checkboxes or toggle buttons (not dropdown)
+Users must be able to select more than one option
+Game Type options:
+9-Hole
+18-Hole
+Executive Course
+Par-3 Course
+27-Hole
+Logic: Dynamically filter available game types based on selected Location.
+For example:
+If Location = "White Sands", only show: 9-Hole, Par-3 Course
+If Location = "Falcon Ridge", show: 9-Hole, 18-Hole, 27-Hole
+5. Date
+
+No changes needed. Leave as-is.
+6. Time → Tee Time
+
+Rename label: Tee Time
+Input type: time picker or dropdown
+Restrict selection window from 06:30 AM to 07:00 PM only
+Use 10 or 15-minute intervals
+7. Max Players → Number of Players
+
+Rename label: Number of Players
+Input type: <select>
+Options:
+1
+2
+3
+4
+8. Details
+
+Leave unchanged. Keep as standard <textarea> input for optional notes.
+Optional Enhancements (if supported):
+
+Add logic to auto-filter game type options when a course is selected.
+Style checkboxes as toggle buttons.
+Dynamically limit Tee Time options by season (optional, if daylight APIs are used).
