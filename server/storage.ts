@@ -62,11 +62,11 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(games);
   }
   
-  async getGamesBySport(sport: string): Promise<Game[]> {
+  async getGamesBySport(skillLevel: string): Promise<Game[]> {
     return db
       .select()
       .from(games)
-      .where(eq(games.sport, sport));
+      .where(eq(games.skillLevel, skillLevel));
   }
   
   async createGame(game: InsertGame): Promise<Game> {
@@ -90,11 +90,11 @@ export class DatabaseStorage implements IStorage {
     return db.select().from(players);
   }
   
-  async getPlayersBySport(sport: string): Promise<Player[]> {
+  async getPlayersBySport(skillLevel: string): Promise<Player[]> {
     return db
       .select()
       .from(players)
-      .where(eq(players.sport, sport));
+      .where(eq(players.skillLevel, skillLevel));
   }
   
   async createPlayer(player: InsertPlayer): Promise<Player> {
