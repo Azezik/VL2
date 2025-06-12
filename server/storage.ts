@@ -16,13 +16,13 @@ export interface IStorage {
   // Game methods
   getGame(id: number): Promise<Game | undefined>;
   getGames(): Promise<Game[]>;
-  getGamesBySport(sport: string): Promise<Game[]>;
+  getGamesBySport(skillLevel: string): Promise<Game[]>;
   createGame(game: InsertGame): Promise<Game>;
   
   // Player methods
   getPlayer(id: number): Promise<Player | undefined>;
   getPlayers(): Promise<Player[]>;
-  getPlayersBySport(sport: string): Promise<Player[]>;
+  getPlayersBySport(skillLevel: string): Promise<Player[]>;
   createPlayer(player: InsertPlayer): Promise<Player>;
 }
 
